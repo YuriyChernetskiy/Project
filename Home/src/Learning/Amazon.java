@@ -2,9 +2,6 @@ package Learning;
 import java.util.regex.*;
 import java.util.Scanner;
 
-/**
- * Created by Юрчик on 19.04.2017.
- */
 class Amazon {
     private Pattern pat;
     private Matcher mat;
