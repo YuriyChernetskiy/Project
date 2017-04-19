@@ -8,12 +8,8 @@ class RandomEmail {
 
     public void newEmail() {
         a = new char[10];
-        random = 0 +(int) (Math.random()*4);
-        for (int i = 0; i < a.length; i++){
-            int z = (int) (Math.random() * 10);
-            int sum = z+97;
-            a[i] += sum;
-        }
+        random = (int) (0 + Math.random()*5);
+        for (int i = 0; i < a.length; i++) {a[i] += (char) (97+ Math.random() * 25);}
         email = new String(a);
         System.out.println(email+domName[random]);
     }
