@@ -29,10 +29,8 @@ class AmmazonApp {
         System.out.print("Выбирете страницу для перехода: ");
         String page = sc.next();
         String newUrl =  am.changeUrl(page);
-        System.out.println("Old url: ");
-        System.out.println(am.url);
-        System.out.println("New url: ");
-        System.out.println(newUrl);
+        System.out.println("Old url: \n" + am.url);
+        System.out.println("New url: \n" + newUrl);
         sc.close();
     }
 }
