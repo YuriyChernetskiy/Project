@@ -33,6 +33,7 @@ class AmmazonApp {
         System.out.println(am.url);
         System.out.println("New url: ");
         System.out.println(newUrl);
+        sc.close();
     }
 }
 
