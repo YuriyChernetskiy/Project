@@ -12,7 +12,7 @@ class RandomEmail {
         random = (int) (0 + Math.random()*5);
         // получаем в масcив чаров [a-z]
         characters = new char[10];
-        for (int i = 0; i < characters.length; i++) {characters[i] += (char) (97+ Math.random() * 25);}
+        for (int i = 0; i < characters.length; i++) {characters[i] += (char) (97+ Math.random() * 26);}
         email = new String(characters);
         // получаем в масcив чаров [0-9]
         numbers = new char[10];
@@ -27,6 +27,7 @@ class RandomEmail {
 class RandomApp {
     public static void main(String[] args) {
          RandomEmail re = new RandomEmail();
+         for (int i=0; i<1000; i++)
          re.newEmail();
         }
    }
