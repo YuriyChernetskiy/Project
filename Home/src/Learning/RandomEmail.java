@@ -3,12 +3,13 @@ package Learning;
 class RandomEmail {
     private StringBuffer sb;
     private String email;
-    private String[] domName = {"@gmail.com", "@hotline.com", "@ya.ru", "@mail.ru", "@i.ua",
-                                "@ukr.net", "@yandex.ru", "@rambler.ru", "@yandex.ua", "@bk.ru",
-                                "@meta.ua","@mail.ua", "@bigmir.net", "@list.ru", "@inbox.ru"};
     private char[] characters;
     private char[] numbers;
     private int random;
+    private String[] domName = {"@gmail.com", "@hotline.com", "@ya.ru", "@mail.ru", "@i.ua",
+                                "@ukr.net", "@yandex.ru", "@rambler.ru", "@yandex.ua", "@bk.ru",
+                                "@meta.ua","@mail.ua", "@bigmir.net", "@list.ru", "@inbox.ru"};
+
 
     public void newEmail() {
         random = (int) (0 + Math.random()*15);
@@ -29,7 +30,6 @@ class RandomEmail {
 class RandomApp {
     public static void main(String[] args) {
          RandomEmail re = new RandomEmail();
-         for (int i=0; i<1000; i++)
          re.newEmail();
         }
    }
