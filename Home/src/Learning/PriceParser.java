@@ -42,7 +42,11 @@ package Learning;
                  if (sb.length()== 1){
                      sb = sb.append(0);
                      tempPrice = sb.toString();
-                     } else
+                     }
+                 if (sb.length()> 2){
+                     sb = sb.delete(2,sb.length());
+                     tempPrice = sb.toString();
+                 }else
                      tempPrice = sb.toString();
                      strCent = tempPrice;
              }
@@ -62,7 +66,7 @@ package Learning;
 
  class PriceParserApp {
      public static void main(String[] args) {
-         String price = "$2333,67дол";
+         String price = "$2333,374дол";
          PriceParser priceParser = new PriceParser();
          priceParser.getPrice(price);
          System.out.println(priceParser.showPrice());
