@@ -1,6 +1,5 @@
 package Learning;
 import java.util.regex.*;
-import java.util.Scanner;
 
 class Amazon {
     private Pattern pat;
@@ -17,18 +16,6 @@ class Amazon {
         pat = Pattern.compile("page=[0-9]*");
         mat = pat.matcher(url);
         return mat.replaceAll(repPage);
-    }
-}
-class AmmazonApp {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Amazon am = new Amazon("https://www.amazon.com/s/ref=sr_pg_13?fst=p90x%3A1&rh=i%3Aaps%2Ck%3Aumbrella&page=13&keywords=umbrella&ie=UTF8&qid=1492598041&spIA=B01MT5F7FN,B015K7WUUA,B06Y3265XF,B00UR0EFEK,B01J4UCSFG,B01NAYOAXE");
-        System.out.print("Выбирете страницу для перехода: ");
-        String page = sc.next();
-        String newUrl =  am.changeUrl(page);
-        System.out.println("Old url: \n" + am.url);
-        System.out.println("New url: \n" + newUrl);
-        sc.close();
     }
 }
 

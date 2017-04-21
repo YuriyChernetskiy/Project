@@ -27,11 +27,3 @@ class RandomEmail {
         System.out.println(sb+domName[random]);
         }
     }
-
-class RandomApp {
-    public static void main(String[] args) {
-         RandomEmail re = new RandomEmail();
-         for (int i=0; i<1000; i++)
-         re.newEmail();
-        }
-   }
