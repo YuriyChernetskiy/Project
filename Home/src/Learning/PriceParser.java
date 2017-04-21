@@ -57,18 +57,15 @@ package Learning;
          sb.setLength(0);
      }
 
-     public String showPrice(){
-       String showPrice;
-       showPrice = sb.append('$').append(dollar).append(',').append(cent).toString();
+     public String showPrice(int price){
+       String showPrice = String.valueOf(price);
+       showPrice = sb.append('$').append(price).append(',').append(0).toString();
        return showPrice;
      }
- }
 
- class PriceParserApp {
-     public static void main(String[] args) {
-         String price = "$2333,374дол";
-         PriceParser priceParser = new PriceParser();
-         priceParser.getPrice(price);
-         System.out.println(priceParser.showPrice());
+     public String showPrice(double price) {
+         String showPrice = String.valueOf(price);
+         showPrice = sb.append('$').append(price).toString();
+         return showPrice;
      }
  }
