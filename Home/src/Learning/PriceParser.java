@@ -5,13 +5,15 @@ package Learning;
      private String tempPrice;
      private char[] inPrice;
      private int price;
+     boolean control;
 
      public void getPrice(String price) {
          inPrice = price.toCharArray();
-         processingPrice();
      }
 
-     private void processingPrice() {
+     public int processingPrice() {
+         tempPrice = "";
+         control = true;
 
          for (int i=0; i<inPrice.length; i++) {
 
@@ -20,19 +22,48 @@ package Learning;
 
              if (inPrice[i] == ',' || inPrice[i] == '.') {
                  tempPrice = sb.toString();
+                 price = Integer.parseInt(tempPrice)*100;
+                 control = false;
+                 tempPrice = "";
                  sb.setLength(0);
              }
-             if (sb.length() > 2)
+             if (!control && sb.length() > 2)
                  sb = sb.delete(2, sb.length());
          }
-             tempPrice += sb.toString();
-             price = Integer.parseInt(tempPrice);
-             sb.setLength(0);
+                tempPrice = sb.toString();
+                sb.setLength(0);
+
+                if (control)
+                  price = Integer.parseInt(tempPrice)*100;
+
+                if (!control && (tempPrice.length() > 1) && tempPrice.matches("0\\d"))
+                    price += Integer.parseInt(tempPrice);
+
+                if (!control && (tempPrice.length() > 1) && tempPrice.matches("[1-9]\\d"))
+                    price += Integer.parseInt(tempPrice);
+
+                if (!control && (tempPrice.length() == 1)){
+                 tempPrice += "0";
+                 price += Integer.parseInt(tempPrice);
+                 sb.setLength(0);
+             }
+
+             return price;
      }
 
      public String showPrice(int price){
-         String showPrice;
-         showPrice = sb.append('$').append(price/100).append(',').append(price%100).toString();
+
+         String showPrice = "$";
+         int checkCent = price%100;
+         sb.append(price/100);
+         sb.append(',');
+
+         if (checkCent < 10)
+             sb.append('0');
+
+         sb.append(checkCent);
+         showPrice += sb.toString();
+         sb.setLength(0);
          return showPrice;
-     }
+         }
  }
